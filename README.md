@@ -1,1 +1,1 @@
-This repo is created on education purposes
+This repo is created for education purposes
