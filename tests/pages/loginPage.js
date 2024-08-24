@@ -1,6 +1,5 @@
-const { expect } = require('@playwright/test');
 
-
+// LOGIN PAGE + CREDENTIALS
 exports.loginPage = class loginPage {
 
     /**

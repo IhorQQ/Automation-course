@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
 const { loginPage, USERS_CREDS } = require('./pages/loginPage.js');
 const { mainPage } = require('./pages/mainPage.js');
-const {beforeEach} = require("node:test");
+
 
 test.describe('Login tests', () => {
 
