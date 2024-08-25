@@ -10,6 +10,9 @@ exports.mainPage = class mainPage {
         this.linkedinBtn = page.locator('[data-test="social-linkedin"]');
         this.facebookBtn = page.locator('[data-test="social-facebook"]');
 
+
+        this.priceElement = page.locator('[data-test="inventory-item-price"]');
+
         // SIDE MENU
         // this.menuBtn = page.getByRole('button', { name: 'Open Menu' });
         this.menuBtn = page.locator('#react-burger-menu-btn');
