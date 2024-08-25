@@ -12,6 +12,7 @@ exports.mainPage = class mainPage {
 
 
         this.priceElement = page.locator('[data-test="inventory-item-price"]');
+        this.addToCartElement = page.getByRole('button', { name: 'Add to cart' });
 
         // SIDE MENU
         // this.menuBtn = page.getByRole('button', { name: 'Open Menu' });
