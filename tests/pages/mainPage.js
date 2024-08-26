@@ -20,7 +20,7 @@ exports.mainPage = class mainPage {
         this.logoutBtn = page.locator('[data-test="logout-sidebar-link"]');
 
         // CART
-        this.cartBadge = page.locator('[data-test="shopping-cart-badge"]')
+        this.cartBadge = this.page.locator('[data-test="shopping-cart-badge"]')
 
 
     }
