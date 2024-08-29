@@ -1,5 +1,6 @@
 const {test, expect} = require("@playwright/test");
 const { loginPage, USERS_CREDS } = require('./pages/loginPage.js');
+const {mainPage} = require("./pages/mainPage");
 
 test.describe('Socials check', () => {
 
@@ -11,15 +12,18 @@ test.describe('Socials check', () => {
     });
 
     test('Twitter check', async ({ page }) => {
-        await expect(page.locator('[data-test="social-twitter"]')).toHaveAttribute('href', 'https://twitter.com/saucelabs');
+        const mainPageInstance = new mainPage(page);
+        await expect(mainPageInstance.twitterLinkCheck())
     })
 
     test('Facebook check', async ({ page }) => {
-        await expect(page.locator('[data-test="social-facebook"]')).toHaveAttribute('href', 'https://www.facebook.com/saucelabs');
+        const mainPageInstance = new mainPage(page);
+        await expect(mainPageInstance.facebookLinkCheck())
     })
 
     test('LinkedIn check', async ({ page }) => {
-        await expect(page.locator('[data-test="social-linkedin"]')).toHaveAttribute('href', 'https://www.linkedin.com/company/sauce-labs/');
+        const mainPageInstance = new mainPage(page);
+        await expect(mainPageInstance.linkedinLinkCheck())
     })
 
 })

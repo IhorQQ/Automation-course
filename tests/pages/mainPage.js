@@ -6,9 +6,12 @@ exports.mainPage = class mainPage {
     constructor(page) {
         this.page = page;
         this.cartBtn = page.locator('[data-test="shopping-cart-link"]');
-        this.twitterBtn = page.locator('[data-test="social-twitter"]');
-        this.linkedinBtn = page.locator('[data-test="social-linkedin"]');
-        this.facebookBtn = page.locator('[data-test="social-facebook"]');
+
+
+        // SOCIALS
+        this.twitterBtn = this.page.locator('[data-test="social-twitter"]');
+        this.linkedinBtn = this.page.locator('[data-test="social-linkedin"]');
+        this.facebookBtn = this.page.locator('[data-test="social-facebook"]');
 
 
         this.priceElement = page.locator('[data-test="inventory-item-price"]');
@@ -38,17 +41,17 @@ exports.mainPage = class mainPage {
         await this.cartBtn.click();
     }
 
-    async twitterLink() {
-        await expect(page.locator('[data-test="social-twitter"]')).toHaveAttribute('href', 'https://x.com/saucelabs');
+    async twitterLinkCheck() {
+        await expect(twitterBtn).toHaveAttribute('href', 'https://twitter.com/saucelabs');
 
     }
 
-    async facebookClick() {
-        await this.facebookBtn.click();
+    async facebookLinkCheck() {
+        await expect(facebookBtn).toHaveAttribute('href', 'https://facebook.com/saucelabs');
     }
 
-    async likeClick() {
-        await this.linkedinBtn.click();
+    async linkedinLinkCheck() {
+        await expect(linkedinBtn).toHaveAttribute('href', 'https://www.linkedin.com/company/sauce-labs/');
     }
 
     async logoutClick() {
