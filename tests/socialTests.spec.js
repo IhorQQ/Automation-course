@@ -1,4 +1,4 @@
-const {test, expect} = require("@playwright/test");
+const {test} = require("@playwright/test");
 const { loginPage, USERS_CREDS } = require('./pages/loginPage.js');
 const {mainPage} = require("./pages/mainPage");
 
@@ -13,17 +13,17 @@ test.describe('Socials check', () => {
 
     test('Twitter check', async ({ page }) => {
         const mainPageInstance = new mainPage(page);
-        await expect(mainPageInstance.twitterLinkCheck())
+        await mainPageInstance.twitterLinkCheck()
     })
 
     test('Facebook check', async ({ page }) => {
         const mainPageInstance = new mainPage(page);
-        await expect(mainPageInstance.facebookLinkCheck())
+        await mainPageInstance.facebookLinkCheck()
     })
 
     test('LinkedIn check', async ({ page }) => {
         const mainPageInstance = new mainPage(page);
-        await expect(mainPageInstance.linkedinLinkCheck())
+        await mainPageInstance.linkedinLinkCheck()
     })
 
 })

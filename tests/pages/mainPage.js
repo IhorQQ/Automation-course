@@ -42,16 +42,16 @@ exports.mainPage = class mainPage {
     }
 
     async twitterLinkCheck() {
-        await expect(twitterBtn).toHaveAttribute('href', 'https://twitter.com/saucelabs');
+        await expect(this.twitterBtn).toHaveAttribute('href', 'https://twitter.com/saucelabs');
 
     }
 
     async facebookLinkCheck() {
-        await expect(facebookBtn).toHaveAttribute('href', 'https://facebook.com/saucelabs');
+        await expect(this.facebookBtn).toHaveAttribute('href', 'https://www.facebook.com/saucelabs');
     }
 
     async linkedinLinkCheck() {
-        await expect(linkedinBtn).toHaveAttribute('href', 'https://www.linkedin.com/company/sauce-labs/');
+        await expect(this.linkedinBtn).toHaveAttribute('href', 'https://www.linkedin.com/company/sauce-labs/');
     }
 
     async logoutClick() {
