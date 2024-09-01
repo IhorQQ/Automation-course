@@ -1,7 +1,7 @@
 const { expect } = require('@playwright/test');
 
 
-exports.mainPage = class mainPage {
+exports.mainPage = class MainPage {
 
     constructor(page) {
         this.page = page;
@@ -15,7 +15,8 @@ exports.mainPage = class mainPage {
 
 
         this.priceElement = page.locator('[data-test="inventory-item-price"]');
-        this.addToCartElement = page.getByRole('button', { name: 'Add to cart' });
+        this.addToCartElement = this.page.getByRole('button', { name: 'Add to cart' });
+        this.removeBtn = page.getByRole('button', { name: 'Remove' });
 
         // SIDE MENU
         // this.menuBtn = page.getByRole('button', { name: 'Open Menu' });
