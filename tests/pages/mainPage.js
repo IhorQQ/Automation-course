@@ -31,7 +31,7 @@ exports.mainPage = class MainPage {
 
 
     async goto() {
-        await this.page.goto('https://www.saucedemo.com/');
+        await this.page.goto('https://www.saucedemo.com/inventory.html');
     }
 
     async menuClick() {

@@ -5,3 +5,6 @@ node_modules/
 /playwright/.cache/
 package.json
 package-lock.json
+LoginAuth.json
+.gitignore
+/playwright/.auth/user.json
