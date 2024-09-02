@@ -3,7 +3,7 @@ const {loginPage, USERS_CREDS} = require("./tests/pages/loginPage");
 import { chromium } from "@playwright/test";
 
 async function globalSetup() {
-    const browser = await chromium.launch({headless: false});
+    const browser = await chromium.launch({headless: true});
     const context = await browser.newContext();
     const page = await context.newPage();
     const loginPageInstance = new loginPage(page);
