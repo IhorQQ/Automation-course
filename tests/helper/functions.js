@@ -10,7 +10,7 @@ export const removeItemFromCart = async (mainPageInstance, itemIndex) => {
 
 
 export const extractPriceValue = (priceText) => {
-    return parseFloat(priceText.split('$')[1]);
+    return Number(priceText.match(/\d+(\.\d+)?/g))
 };
 
 export const checkoutItemPrice = async (checkoutPage, itemIndex) => {

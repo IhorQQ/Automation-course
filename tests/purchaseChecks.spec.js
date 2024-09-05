@@ -1,5 +1,4 @@
 const {test, expect} = require("@playwright/test");
-const {loginPage, USERS_CREDS} = require("./pages/loginPage");
 const {mainPage} = require("./pages/mainPage");
 const {checkoutPage} = require("./pages/checkoutPage");
 import {addItemToCart, extractPriceValue, removeItemFromCart} from "./helper/functions";
@@ -7,10 +6,8 @@ import {addItemToCart, extractPriceValue, removeItemFromCart} from "./helper/fun
 
 test.describe('Shut up and take my money', () => {
     test.beforeEach(async ({ page }) => {
-        const loginPageInstance = new loginPage(page);
-        await loginPageInstance.goto();
-        await page.context().clearCookies();
-        await loginPageInstance.starnardUserLogin(USERS_CREDS.standard_user, USERS_CREDS.password)
+        const mainPageInstance = new mainPage(page);
+        await mainPageInstance.goto();
     })
 
     test('Adding product to the cart', async ({ page }) => {
@@ -57,6 +54,5 @@ test.describe('Shut up and take my money', () => {
         await checkoutPageInstance.goto();
         let calculatedTotal = ((extractPriceValue(await checkoutPageInstance.itemTotal.innerText())) * 1.08).toFixed(2)
         await expect(checkoutPageInstance.totalAmount).toHaveText(`Total: $${calculatedTotal}`)
-
     })
 })
